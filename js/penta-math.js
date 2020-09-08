@@ -145,7 +145,7 @@ export class PentaMath {
       fill: colors.background,
       id: "background-circle",
     });
-    BGCircle.css("z-index", 900);
+
 
     // draw outer circle
     const OuterBGCircle = this.drawer.circle(OuterRadius * 2);
@@ -157,7 +157,7 @@ export class PentaMath {
       "stroke-width": lineWidth,
     });
     OuterBGCircle.data({ id: "outer-circle" });
-    OuterBGCircle.css("z-index", 900);
+
 
     // drawing corners and junctions
     for (var i = 5; i !== -1; i--) {
@@ -197,7 +197,7 @@ export class PentaMath {
         });
         OuterStop.center(StopPoints.x, StopPoints.y);
         OuterStop.data({ id: `s-${i}-${x}` });
-        OuterStop.css("z-index", 1000);
+
         board.stops.outer[`s-${i}-${x}`] = {
           x: StopPoints.x,
           y: StopPoints.y,
@@ -220,7 +220,7 @@ export class PentaMath {
         });
         ArmStop.center(ArmPoints.x, ArmPoints.y);
         ArmStop.data({ id: `s-${i + 2}-${x}-${i + 1}` });
-        ArmStop.css("z-index", 1000);
+
         board.stops.inner[`s-${i + 1}-${x}`] = {
           x: ArmPoints.x,
           y: ArmPoints.y,
@@ -249,7 +249,7 @@ export class PentaMath {
             stroke: colors.background,
             "stroke-width": lineWidth * 0.5,
           });
-          Leg.css("z-index", 1000);
+
           Leg.center(LegPoints.x, LegPoints.y);
           Leg.data({ id: `s-${i + 6}-${x}-${i + 4}` });
           board.stops.inner[`s-${i}-${x}-${i + 5 + x}`] = {
@@ -269,7 +269,7 @@ export class PentaMath {
       });
       Corner.center(CornerPoints.x, CornerPoints.y);
       Corner.data({ id: i + 6 });
-      Corner.css("z-index", 1005);
+
       var Junction = this.drawer.circle(JunctionRadius);
       Junction.attr({
         fill: colors.foreground,
@@ -278,7 +278,7 @@ export class PentaMath {
       });
       Junction.center(JunctionPoints.x, JunctionPoints.y);
       Junction.data({ id: i + 1 });
-      Junction.css("z-index", 1005);
+
       board.corners[i] = new Point({
         id: i + 7,
         x: CornerPoints.x,
