@@ -1,6 +1,6 @@
 import { Point, Figure } from "./core.js";
 
-class PentaMath {
+export class PentaMath {
   /*
     This class provides an appropriate representation of the sizes and values for the construction of a pentagame board.
     The basic logic was supplied by @penta-jan <https://github.com/penta-jan>.
@@ -306,4 +306,4 @@ class PentaMath {
   }
 }
 
-export { PentaMath };
+export default { PentaMath };
